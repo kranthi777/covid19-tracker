@@ -1,0 +1,28 @@
+<div class="backdrop" (click)="onClose()"></div>
+
+<div class="alert-box">
+  
+  <div class="card bg-light">
+    <div class="alert-box-actions">
+      <a (click)="onClose()" class="close-icon">X</a>
+    </div>
+    <div class="card-body text-center">
+      <p class="card-text">
+        <strong>Country: </strong><img src={{message.countryInfo.flag}} class="country-flag"/> {{message.country}}
+        <br>
+        <strong>Confirmed: </strong>{{message.cases}}
+        <br>
+        <strong>Active: </strong>{{message.active}}
+        <br>
+        <strong>Cases per 1 million people: </strong>{{message.casesPerOneMillion}}
+        <br>
+        <strong>Recovered: </strong>{{message.recovered}}
+        <br>
+        <strong>Deaths: </strong>{{message.deaths}}
+        <br>
+        <strong>Today Cases: </strong>{{message.todayCases}}
+        <br>
+      </p>
+    </div>
+  </div>
+</div>

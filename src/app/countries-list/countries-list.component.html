@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="d-flex justify-content-center" *ngIf="isLoading">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <app-alert [message]="selectedItem" *ngIf="selectedItem" (close)="onHandleClose()"></app-alert>     
+  <div class="search-bar-wrapper" *ngIf="!isLoading">
+    <input type="text" class="form-control" placeholder="Search Country" #searchBar (keyup)="onSearch(searchBar)">
+  </div>   
+  <div class="table-responsive" *ngIf="!isLoading">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Confirmed</th>
+          <th>Cases per 1 million people</th>
+          <th>Recovered</th>
+          <th>Deaths</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data" (click)="onClickItem(item)" class="table-row">
+          <td><img src={{item.countryInfo.flag}} class="country-flag"/> {{item.country}}</td>
+          <td>{{item.cases}}</td>
+          <td>{{item.casesPerOneMillion}}</td>
+          <td>{{item.recovered}}</td>
+          <td>{{item.deaths}}</td>
+        </tr>
+      </tbody>
+    </table> 
+  </div>
+</div>

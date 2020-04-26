@@ -1,0 +1,13 @@
+.country-flag {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+.search-bar-wrapper {
+  margin: 20px 0;
+}
+
+.table-row {
+  cursor: pointer;
+}
